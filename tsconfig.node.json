@@ -1,22 +1,23 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "lib": ["ES2023"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "composite": true, // Enable project references
+    "module": "CommonJS", // Node.js uses CommonJS modules
+    "target": "ES2020",
+    "outDir": "./dist-node", // Output directory for Node.js-specific files
+    "declaration": true, // Emit declaration files for Node.js
+    "emitDeclarationOnly": false, // Emit both declarations and compiled files
+    "skipLibCheck": true
   },
-  "include": ["vite.config.ts"]
+  "include": [
+    "src/node/**/*.ts",
+    "src/node/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.app.json" // References the app-specific config
+    }
+  ]
 }
