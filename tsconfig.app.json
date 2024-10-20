@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
-    "composite": true, // Required for project references
+    "composite": true,
     "target": "ES2022",
     "lib": [
-      "ES2023"
-    ],
+      "ES2023",
+      "dom"
+    ], // Include DOM types
     "module": "ESNext",
     "moduleResolution": "bundler",
-    //"allowImportingTsExtensions": true,
+    "jsx": "react-jsx", // JSX support for React
     "isolatedModules": true,
     "moduleDetection": "force",
-    "outDir": "./dist", // Emit files into the dist folder
-    "declaration": true, // Emit declaration files
-    "emitDeclarationOnly": false, // Emit full .js/.tsx files
+    "outDir": "./dist",
+    "declaration": true,
+    "emitDeclarationOnly": false,
     "strict": true,
     "skipLibCheck": true,
     "noUnusedLocals": true,

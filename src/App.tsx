@@ -12,9 +12,9 @@ const App: React.FC = () => {
         <Header />
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/Portfolio" element={<Home />} />
             {/* <Route path="/about" element={<About />} /> */}
-            <Route path="/projects" element={<Projects />} />
+            <Route path="Portfolio/projects" element={<Projects />} />
             {/* <Route path="/contact" element={<Contact />} /> */}
           </Routes>
         </main>
