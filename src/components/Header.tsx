@@ -15,9 +15,9 @@ const Header: React.FC = () => {
       {/* Navigation Links */}
       <div className="space-x-6">
         <Link to="/" className="hover:text-blue-400">Home</Link>
-        <Link to="/about" className="hover:text-blue-400">About</Link>
+        {/* <Link to="/about" className="hover:text-blue-400">About</Link> */}
         <Link to="/projects" className="hover:text-blue-400">Projects</Link>
-        <Link to="/contact" className="hover:text-blue-400">Contact</Link>
+        {/* <Link to="/contact" className="hover:text-blue-400">Contact</Link> */}
       </div>
     </nav>
 </header>

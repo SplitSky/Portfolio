@@ -1,40 +1,55 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 
 interface ProjectCardProps {
   title: string;
   description: string;
-  link: string;
-  highlightColor: string; // This will control the highlight color
+  image: string;
+  githublink?: string;
+  reverse?: boolean;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, link, highlightColor }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, githublink, reverse }) => {
   return (
     <motion.div
-      className="bg-black p-6 border-2 rounded-lg shadow-lg"
-      style={{ borderColor: highlightColor }}
-      whileHover={{ scale: 1.05 }} // Hover scaling
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} items-center my-12`}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
     >
-      <h3 className="text-xl font-bold" style={{ color: highlightColor }}>
-        {title}
-      </h3>
-      <p className="mt-4 text-gray-300">{description}</p>
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block mt-4 text-white font-semibold"
-        style={{ borderBottom: `2px solid ${highlightColor}` }}
-      >
-        View More
-      </a>
+      {/* Image Section */}
+      <div className="w-full md:w-1/4 h-full">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-contain rounded-lg shadow-lg"
+        />
+      </div>
+
+      {/* Text Section */}
+      <div className="md:w-1/2 md:px-6 mt-4 md:mt-0">
+        <h3 className="text-3xl font-bold text-blue-400 mb-4">{title}</h3>
+        <p className="text-gray-300 text-lg leading-relaxed">
+          {description}
+        </p>
+
+        {/* GitHub Button */}
+        {githublink && (
+          <a
+            href={githublink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block bg-transparent border-2 border-blue-400 text-blue-400 px-4 py-2 rounded-md hover:bg-blue-400 hover:text-black transition-all duration-300"
+          >
+            View on GitHub
+          </a>
+        )}
+      </div>
     </motion.div>
   );
 };
-
 
 export default ProjectCard;
 
