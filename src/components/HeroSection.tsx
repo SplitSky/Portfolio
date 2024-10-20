@@ -26,7 +26,7 @@ const HeroSection: React.FC = () => {
         {/* Call-to-Action */}
         <a
           href="#projects"
-          className="mt-6 inline-block bg-black-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-250 transition-all duration-200"
+          className="mt-6 inline-block bg-black text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-250 transition-all duration-200"
         >
           View My Work
         </a>

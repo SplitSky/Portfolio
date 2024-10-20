@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8 mt-16">
+    <footer className="bg-black text-white py-4 mt-1">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           
@@ -47,8 +47,8 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 text-center text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+        <div className="mt-5 text-center text-gray-500">
+          <p>&copy; {new Date().getFullYear()} Tomasz Neska. All rights reserved.</p>
         </div>
       </div>
     </footer>
